@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ١٨٢-١٨٦ | Surah Al-Baqarah - Verses 182-186</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+            height: 54px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        audio:focus {
+            outline: 2px solid #8b4513;
+            outline-offset: 2px;
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 0 15px rgba(139, 69, 19, 0.5);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 10px;
+            direction: rtl;
+        }
+
+        .page-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .verse {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-left: 5px solid #8b4513;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .verse:hover {
+            transform: translateX(5px);
+        }
+
+        .verse-number {
+            display: inline-block;
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', 'Amiri', serif;
+            font-size: 2rem;
+            line-height: 2.8;
+            text-align: right;
+            direction: rtl;
+            color: #1a472a;
+            margin: 20px 0;
+            padding: 25px;
+            background: #f8fdf9;
+            border-radius: 8px;
+            border: 2px solid #8b4513;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .english-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .reflection-point {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(to right, #fff, #f8f9fa);
+            border-left: 4px solid #a0522d;
+            border-radius: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            line-height: 2.2;
+            text-align: right;
+            direction: rtl;
+            color: #2c3e50;
+            padding: 15px;
+            background: #f8fdf9;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: none;
+        }
+
+        .reflection-english {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #666;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .signature {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .signature-header {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .signature-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .signature-profile {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #667eea;
+            object-fit: cover;
+        }
+
+        .signature-info {
+            text-align: center;
+        }
+
+        .signature-name {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .signature-company {
+            color: #667eea;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .signature-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .signature-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .signature-btn {
+            padding: 10px 24px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .signature-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .signature-copyright {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .arabic-title {
+                font-size: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .page-info {
+                font-size: 0.85rem;
+            }
+
+            .audio-player-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .audio-player-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .audio-player-section p {
+                font-size: 0.85rem;
+            }
+
+            audio {
+                max-width: 100%;
+            }
+
+            .verse-selector {
+                gap: 6px;
+            }
+
+            .verse-btn {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+                flex: 0 0 calc(33.333% - 6px);
+                text-align: center;
+            }
+
+            .reciter-info {
+                font-size: 1rem;
+            }
+
+            .verses-container {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .verse {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+
+            .verse-number {
+                font-size: 0.85rem;
+                padding: 4px 12px;
+            }
+
+            .arabic-text {
+                font-size: 1.5rem;
+                line-height: 2.4;
+                padding: 15px;
+            }
+
+            .english-text {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .reflection-section {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .reflection-point {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .reflection-point h3 {
+                font-size: 1rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1.1rem;
+                line-height: 2;
+                padding: 12px;
+            }
+
+            .reflection-english {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                margin: 0 5px;
+            }
+
+            .navigation {
+                margin-bottom: 15px;
+            }
+
+            .signature {
+                padding: 15px;
+            }
+
+            .signature-header {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .signature-profile {
+                width: 80px;
+                height: 80px;
+            }
+
+            .signature-name {
+                font-size: 1.3rem;
+            }
+
+            .signature-company {
+                font-size: 0.9rem;
+            }
+
+            .signature-description {
+                font-size: 0.85rem;
+            }
+
+            .signature-btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+
+            .signature-copyright {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arabic-title {
+                font-size: 1.3rem;
+            }
+
+            .header h1 {
+                font-size: 1.1rem;
+            }
+
+            .verse-btn {
+                flex: 0 0 calc(50% - 6px);
+                padding: 12px 10px;
+                font-size: 0.8rem;
+            }
+
+            .arabic-text {
+                font-size: 1.3rem;
+                line-height: 2.2;
+                padding: 12px;
+            }
+
+            .english-text {
+                font-size: 0.9rem;
+            }
+
+            .reflection-arabic {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .reflection-english {
+                font-size: 0.9rem;
+            }
+
+            .nav-link {
+                display: block;
+                margin: 5px auto;
+                max-width: 200px;
+            }
+
+            .signature-profile {
+                width: 70px;
+                height: 70px;
+            }
+
+            .signature-name {
+                font-size: 1.2rem;
+            }
+
+            .signature-description {
+                font-size: 0.8rem;
+            }
+
+            .signature-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .signature-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .navigation {
+                display: none;
+            }
+            .audio-player-section {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        let currentVerse = 182;
+        
+        function playVerse(verseNumber) {
+            currentVerse = verseNumber;
+            const audio = document.getElementById('quranAudio');
+            const source = document.getElementById('audioSource');
+            
+            // Format verse number to 3 digits
+            const formattedVerse = String(verseNumber).padStart(3, '0');
+            
+            // Update audio source
+            source.src = `https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002${formattedVerse}.mp3`;
+            
+            // Load and play
+            audio.load();
+            audio.play();
+            
+            // Update button styles
+            document.querySelectorAll('.verse-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Auto-play next verse when current one ends
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('quranAudio');
+            
+            audio.addEventListener('ended', function() {
+                if (currentVerse < 186) {
+                    const nextBtn = document.querySelector(`[onclick="playVerse(${currentVerse + 1})"]`);
+                    if (nextBtn) {
+                        nextBtn.click();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Page</a>
+            <a href="#" class="nav-link">Next Page →</a>
+        </div>
+
+        <div class="header">
+            <div class="arabic-title">سورة البقرة</div>
+            <h1>Surah Al-Baqarah (The Cow)</h1>
+            <div class="page-info">Page 28 | Verses 182-186</div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎧 استماع للآيات | Listen to the Verses</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002182.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn active" onclick="playVerse(182)">Verse 182</button>
+                    <button class="verse-btn" onclick="playVerse(183)">Verse 183</button>
+                    <button class="verse-btn" onclick="playVerse(184)">Verse 184</button>
+                    <button class="verse-btn" onclick="playVerse(185)">Verse 185</button>
+                    <button class="verse-btn" onclick="playVerse(186)">Verse 186</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 182</span>
+                <div class="arabic-text">
+                    فَمَنْ خَافَ مِن مُّوصٍۢ جَنَفًا أَوْ إِثْمًۭا فَأَصْلَحَ بَيْنَهُمْ فَلَآ إِثْمَ عَلَيْهِ ۚ إِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ
+                </div>
+                <div class="english-text">
+                    But if one fears from the bequeather [some] error or sin and corrects that which is between them, there is no sin upon him. Indeed, Allah is Forgiving and Merciful.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 183</span>
+                <div class="arabic-text">
+                    يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُتِبَ عَلَيْكُمُ ٱلصِّيَامُ كَمَا كُتِبَ عَلَى ٱلَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ
+                </div>
+                <div class="english-text">
+                    O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 184</span>
+                <div class="arabic-text">
+                    أَيَّامًۭا مَّعْدُودَٰتٍۢ ۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوْ عَلَىٰ سَفَرٍۢ فَعِدَّةٌۭ مِّنْ أَيَّامٍ أُخَرَ ۚ وَعَلَى ٱلَّذِينَ يُطِيقُونَهُۥ فِدْيَةٌۭ طَعَامُ مِسْكِينٍۢ ۖ فَمَن تَطَوَّعَ خَيْرًۭا فَهُوَ خَيْرٌۭ لَّهُۥ ۚ وَأَن تَصُومُوا۟ خَيْرٌۭ لَّكُمْ ۖ إِن كُنتُمْ تَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    [Fasting for] a limited number of days. So whoever among you is ill or on a journey [during them] - then an equal number of days [are to be made up]. And upon those who are able [to fast, but with hardship] - a ransom [as substitute] of feeding a poor person [each day]. And whoever volunteers excess - it is better for him. But to fast is best for you, if you only knew.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 185</span>
+                <div class="arabic-text">
+                    شَهْرُ رَمَضَانَ ٱلَّذِىٓ أُنزِلَ فِيهِ ٱلْقُرْءَانُ هُدًۭى لِّلنَّاسِ وَبَيِّنَٰتٍۢ مِّنَ ٱلْهُدَىٰ وَٱلْفُرْقَانِ ۚ فَمَن شَهِدَ مِنكُمُ ٱلشَّهْرَ فَلْيَصُمْهُ ۖ وَمَن كَانَ مَرِيضًا أَوْ عَلَىٰ سَفَرٍۢ فَعِدَّةٌۭ مِّنْ أَيَّامٍ أُخَرَ ۗ يُرِيدُ ٱللَّهُ بِكُمُ ٱلْيُسْرَ وَلَا يُرِيدُ بِكُمُ ٱلْعُسْرَ وَلِتُكْمِلُوا۟ ٱلْعِدَّةَ وَلِتُكَبِّرُوا۟ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمْ وَلَعَلَّكُمْ تَشْكُرُونَ
+                </div>
+                <div class="english-text">
+                    The month of Ramadhan [is that] in which was revealed the Qur'an, a guidance for the people and clear proofs of guidance and criterion. So whoever sights [the new moon of] the month, let him fast it; and whoever is ill or on a journey - then an equal number of other days. Allah intends for you ease and does not intend for you hardship and [wants] for you to complete the period and to glorify Allah for that [to] which He has guided you; and perhaps you will be grateful.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 186</span>
+                <div class="arabic-text">
+                    وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ
+                </div>
+                <div class="english-text">
+                    And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>⚖️ الإصلاح بين الناس | Making Peace Between People</h3>
+                <div class="reflection-arabic">
+                    فمن خاف من موصٍ جنفاً أو إثماً فأصلح بينهم فلا إثم عليه! إذا رأى شخص أن الموصي يظلم في وصيته - يعطي أكثر من حقه لبعض ورثته أو ينقص البعض - فيجوز له أن يصلح بين الورثة ويعدل الوصية. فلا إثم عليه - لا ذنب على من يصلح، بل له أجر! إن الله غفور رحيم - يغفر الأخطاء ويرحم المصلحين. الإصلاح بين الناس من أفضل الأعمال. المصلح يُعدّل الظلم ويحفظ الحقوق. كن مصلحاً بين الناس، فالإصلاح خير محض ولا إثم فيه.
+                </div>
+                <div class="reflection-english">
+                    "Whoever fears from bequeather error or sin and corrects between them, no sin upon him!" If someone sees the bequeather is unjust in their will - giving more than deserved to some heirs or shortchanging others - they may make peace between heirs and adjust the will. "No sin upon him" - no blame on the peacemaker, rather reward! "Indeed Allah is Forgiving, Merciful" - forgives mistakes and has mercy on peacemakers. Making peace between people is among the best deeds. The peacemaker corrects injustice and preserves rights. Be a peacemaker among people, for peacemaking is pure good with no sin in it.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🌙 كتب عليكم الصيام | Fasting Is Prescribed</h3>
+                <div class="reflection-arabic">
+                    يا أيها الذين آمنوا كتب عليكم الصيام! فُرض عليكم الصيام - واجب لا خيار فيه. كما كتب على الذين من قبلكم - الصيام عبادة قديمة، كانت في الأمم السابقة. لعلكم تتقون - الحكمة من الصيام هي التقوى! الصيام يدرب النفس على ترك المباحات طاعة لله، فكيف بالمحرمات؟ الصيام مدرسة التقوى - فيه ترويض للنفس وتزكية للروح وتقوية للإرادة. الصيام ليس مجرد ترك طعام وشراب، بل تربية روحية شاملة.
+                </div>
+                <div class="reflection-english">
+                    "O believers, fasting is prescribed upon you!" Fasting is obligated upon you - mandatory with no choice. "As prescribed upon those before you" - fasting is ancient worship, existed in previous nations. "That you may become righteous" - the wisdom of fasting is piety! Fasting trains the soul to leave permissible things in obedience to Allah, so what about the forbidden? Fasting is the school of piety - in it is taming the soul, purifying the spirit, and strengthening willpower. Fasting isn't merely leaving food and drink, but comprehensive spiritual training.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🤒 الرخصة للمريض والمسافر | Concession for Sick and Travelers</h3>
+                <div class="reflection-arabic">
+                    أياماً معدودات! أيام قليلة محددة - ليست السنة كلها. فمن كان منكم مريضاً أو على سفر فعدة من أيام أخر - المريض والمسافر يفطران ويقضيان لاحقاً. وعلى الذين يطيقونه فدية طعام مسكين - الكبير العاجز يطعم مسكيناً عن كل يوم. فمن تطوع خيراً فهو خير له - من أطعم أكثر من مسكين. وأن تصوموا خير لكم إن كنتم تعلمون - الصيام أفضل من الفدية للقادر. الإسلام دين اليسر - يراعي أحوال المرضى والمسافرين والعاجزين. خذ بالرخصة إذا احتجت، فالله يحب أن تؤتى رخصه.
+                </div>
+                <div class="reflection-english">
+                    "Limited number of days!" Few specified days - not the whole year. "Whoever is ill or traveling, then equal number of other days" - sick and travelers break fast and make up later. "Upon those unable, ransom of feeding poor person" - elderly unable person feeds one poor per day. "Whoever volunteers more, it's better" - feeds more than one poor. "To fast is best if you knew" - fasting is better than ransom for the able. Islam is religion of ease - considers conditions of sick, travelers, and unable. Take the concession when needed, for Allah loves His concessions to be taken.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>📖 شهر رمضان والقرآن | Ramadan and the Quran</h3>
+                <div class="reflection-arabic">
+                    شهر رمضان الذي أنزل فيه القرآن! رمضان شهر القرآن - نزل فيه القرآن في ليلة القدر. هدى للناس وبيّنات من الهدى والفرقان - القرآن هداية ودلائل واضحة وفرقان بين الحق والباطل. فمن شهد منكم الشهر فليصمه - من حضر الشهر مقيماً صحيحاً فليصمه. يريد الله بكم اليسر ولا يريد بكم العسر - الله يريد التيسير لا التعسير! ولتكملوا العدة ولتكبروا الله على ما هداكم - لتكملوا الشهر وتكبروا الله في عيد الفطر. ولعلكم تشكرون - لتشكروا الله على نعمة الهداية. رمضان والقرآن توأمان - اجمع بينهما!
+                </div>
+                <div class="reflection-english">
+                    "Ramadan, the month Quran was revealed!" Ramadan is the month of Quran - Quran descended in it on Laylatul Qadr. "Guidance for people, clear proofs, and criterion" - Quran is guidance, clear evidences, and distinction between truth and falsehood. "Whoever witnesses the month, let him fast" - whoever is present, resident, and healthy in the month should fast. "Allah intends ease, not hardship for you" - Allah wants facilitation not hardship! "To complete the period and glorify Allah for guiding you" - complete the month and glorify Allah on Eid al-Fitr. "That you may be grateful" - to thank Allah for the blessing of guidance. Ramadan and Quran are twins - combine them!
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🤲 إني قريب أجيب | I Am Near, I Respond</h3>
+                <div class="reflection-arabic">
+                    وإذا سألك عبادي عني فإني قريب! آية عظيمة في وسط آيات الصيام - لماذا؟ لأن الصائم دعاؤه مستجاب! فإني قريب - الله قريب لا يحتاج لوسيط. أجيب دعوة الداع إذا دعان - يستجيب لمن دعاه! فليستجيبوا لي - فليطيعوني. وليؤمنوا بي - وليؤمنوا بقدرتي على الإجابة. لعلهم يرشدون - ليهتدوا للصواب. لاحظ: قال "عبادي" بالإضافة - قرب وحب! الدعاء عبادة عظيمة - اسأل الله مباشرة في كل وقت. خاصة في رمضان، وخاصة عند الإفطار - دعوة الصائم لا تُرد!
+                </div>
+                <div class="reflection-english">
+                    "When My servants ask about Me, indeed I am near!" Great verse amid fasting verses - why? Because the fasting person's supplication is answered! "Indeed I am near" - Allah is near, needs no intermediary. "I respond to supplicant when he calls" - answers whoever calls Him! "Let them respond to Me" - let them obey Me. "Believe in Me" - believe in My ability to answer. "That they may be guided" - to be rightly guided. Notice: said "My servants" possessively - closeness and love! Supplication is great worship - ask Allah directly anytime. Especially in Ramadan, especially at iftar - the fasting person's supplication isn't rejected!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ"
+            </div>
+            <div class="footer-text">
+                "And when My servants ask you concerning Me - indeed I am near. I respond to the invocation when he calls upon Me."
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+
+        <div class="signature">
+            <div class="signature-header">Designed and Coded by</div>
+            <div class="signature-content">
+                <img src="https://balancedlifeharmony-spec.github.io/signature-/profile.jpg" alt="Emhemed Elahresh" class="signature-profile" onerror="this.style.display='none'">
+                <div class="signature-info">
+                    <div class="signature-name">Emhemed Elahresh</div>
+                    <div class="signature-company">Victory Hour Media</div>
+                    <div class="signature-description">
+                        Creating impactful digital experiences and media solutions. Every project is crafted with attention to detail and user experience in mind.
+                    </div>
+                    <div class="signature-buttons">
+                        <a href="mailto:contact@example.com" class="signature-btn">Email</a>
+                        <a href="https://balancedlifeharmony-spec.github.io/signature-/" target="_blank" class="signature-btn">Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signature-copyright">© 2025 Emhemed Elahresh. All rights reserved.</div>
+        </div>
+    </div>
+</body>
+</html>
